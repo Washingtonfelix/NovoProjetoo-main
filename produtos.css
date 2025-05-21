@@ -1,13 +1,27 @@
+body{
+    overflow-x: hidden;
+}
 ::before, ::after {
-    box-sizing: 
-    border-box;
+    box-sizing: border-box;
 }
 
 header{
     width: 100%;
     background: #BBBBBB;
     padding: 20px 0;
-   
+    text-align: center;
+}
+
+header h1{
+    margin:0;
+    padding: 0;
+}
+
+header img{
+    max-width: 150px;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px auto;
 }
 
 img{
@@ -22,18 +36,26 @@ img{
     max-width: 940px;
     width: 90%;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 nav{
     position: static;
-    text-align: right;
     margin-bottom: 20px;
 }
- 
-nav li{
-    display: inline;
-    margin: 0 0 0 15px;
+
+nav ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
 }
+ 
 
 nav a{
     text-transform: uppercase;
@@ -41,6 +63,8 @@ nav a{
     font-weight: bold;
     font-size: 22px;
     text-decoration: none;
+    padding: 5px 10px;
+    white-space: nowrap;
 }
 nav a:hover{
     color: red;
@@ -55,12 +79,12 @@ nav a:hover{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    gap: 20px;
 }
 
 .produtos li{
     text-align: center;
     width: 30%;
-    margin: 0 1.5%;
     padding: 30px 20px;
     box-sizing: border-box;
     border: 2px solid #000000;
@@ -68,6 +92,7 @@ nav a:hover{
     flex-direction: column;
     justify-content: space-between;
     border-radius: 10px;
+
 }
 
 .produtos li:hover{
@@ -79,79 +104,166 @@ nav a:hover{
 }
 
 .produtos li:hover h2{
-    font-size: 40px;
+    font-size: 30px;
 }
 
 .produtos h2{
-    font-size: 30px;
+    font-size: 20px;
     font-weight: bold;
     margin-bottom: 10px;
+    white-space: nowrap;
+}
+
+.produtos li img{
+    max-width: 120px;
+    margin: 15px auto;
 }
 
 .produto-descricao{
     font-size: 18px;
+    flex-grow: 1;
 }
 
 .produto-preco{
     font-weight: bold;
-    font-size: 20px;
-    margin-top: 10px;
+    font-size: 22px;
+    margin-top: 15px;
+    display: block;
 }
 
 footer{
     text-align: center;
     background: url(imagens/bg.jpg);
-    padding: 40px 0;
+    background-size: cover;
+    background-position: center;
     width: 100%;
+    padding: 40px 0;
+}
+
+.caixa-footer img{
+    max-width: 150px;
+    filter: invert(100%)
 }
 
 .copyright{
     color: white;
     font-size: 15px;
-    margin: 20px 0;
 }
 
 @media (max-width: 768px){
+
+    header img{
+        max-width: 100px;
+    }
     .caixa{
         width: 100%;
         padding: 0 15px;
+        align-items: center;
 
     }
     nav{
         text-align: center;
-        margin-bottom: 0;
+        margin-bottom: 15px;
     }
 
-    nav li{
-        display:block;
-        margin: 10px 0;
+    nav ul{
+        justify-content: center;
+        gap: 10px;
     }
+
 
     nav a{
         font-size: 18px;
+        padding: 5px;
     }
 
     .produtos{
         width: 100%;
         padding: 20px 15px;
+        gap: 15px;
     }
 
     .produtos li{
-        width: 47%;
-        margin: 0 1.5%;
-        margin-bottom: 30px;
+        width: calc(50% - 7.5px);
+        margin-bottom: 15px;
+        padding: 20px 15px;
+    }
+
+    .produtos h2{
+        font-size: 24px;
+    }
+
+    .produto-descricao{
+        font-size: 16px;
+    
+    }
+
+    .produto-preco{
+        font-size: 20px;
+    }
+
+    footer{
+        padding: 30px 15px;
+    }
+
+    .caixa-footer{
+        width: 100%;
+        padding: 0 15px;
     }
 }
 
 
 @media (max-width: 480px){
-    .produtos li{
-        width: 90%;
-        margin: 0 auto 30px auto;
+    header img{
+        max-width: 80px;
     }
 
-    header, footer{
-        padding: 15px 10px;
+    nav ul{
+        flex-direction: column;
+        gap: 5px;
     }
+
+    nav li{
+        margin: 5px 0;
+    }
+
+    nav a{
+        font-size: 16px;
+    }
+
+    .produtos{
+        padding: 15px 10px;
+        gap: 10px;
+    }
+
+    .produtos li{
+        width: 90%;
+        margin: 0 auto 20px auto;
+        align-items: center;
+        padding: 15px 10px
+    }
+
+    .produtos h2{
+        font-size: 22px;
+    }
+
+    ;.produto-descricao{
+        font-size: 15px;
+    }
+
+    .produto-preco{
+        font-size: 18px;
+    }
+
+    footer{
+        padding: 25px 10px;
+    }
+    .caixa-footer{
+        max-width: 100px;
+    }
+    .copyright{
+        font-size: 13px;
+    }
+    
 
 }
